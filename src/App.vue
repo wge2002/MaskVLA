@@ -84,8 +84,10 @@
       2.0, achieving an average success rate improvement of 22.9% and 16.5%
       compared to π0 and OpenVLA-OFT, respectively. Furthermore, experiments on
       real-world ALOHA robots also demonstrate the effectiveness of our
-      approach. Our project page is https://anonymous.4open.science/w/
-      MaskVLA-D31F/.
+      approach. Our project page is
+      <a href="https://anonymous.4open.science/w/MaskVLA-D31F/" target="_blank"
+        >https://anonymous.4open.science/w/MaskVLA-D31F/</a
+      >.
     </div>
 
     <!-- <div class="codeSpace">
@@ -102,29 +104,332 @@
     </div> -->
   </div>
   <div class="articleMainBodyContainer contentContainer">
-    <div class="contentImg contentImg1">
+    <div class="contentImg mediumImg">
       <img src="./assets/pic/pic1.png" alt="image" />
       <div class="introText">
-        <span class="bold">Fig. 1.</span> We propose MaskVLA, an improved
-        fine-tuning method for multiview VLA frameworks that significantly
-        enhances model performance. By randomly masking the primary camera
-        input, the method guides the model to learn robust multi-view visual
-        features. In both RoboTwin2.0 [5] simulation environments and real-world
-        experiments, it demonstrates substantial improvements over OpenVLA-OFT
-        [2] across multiple manipulation tasks.
+        <span class="bold">Fig. 1.</span> We propose
+        <span class="black">MaskVLA</span>, an improved fine-tuning method for
+        multiview VLA frameworks that significantly enhances model performance.
+        By randomly masking the primary camera input, the method guides the
+        model to learn robust multi-view visual features. In both RoboTwin2.0
+        simulation environments and real-world experiments, it demonstrates
+        substantial improvements over OpenVLA-OFT across multiple manipulation
+        tasks.
       </div>
     </div>
   </div>
+  <div class="articleMainBodyContainer contentContainer">
+    <div class="contentImg mediumImg">
+      <img src="./assets/pic/pic2.png" alt="image" />
+      <div class="introText">
+        <span class="bold">Fig. 2.</span>
+        <span class="black"> Grad-CAM Analysis:</span>
+        Qualitative comparisons on two RoboTwin tasks.
+        <span class="black">Row 1:</span> Input images.
+        <span class="black">Row 2:</span> Baseline (OpenVLA-OFT) shows scattered
+        attention on irrelevant areas. <span class="black">Row 3:</span> MaskVLA
+        concentrates attention precisely on task-critical regions validating its
+        superior visual grounding via masked training.
+      </div>
+    </div>
+  </div>
+  <div class="articleMainBodyContainer contentContainer">
+    <div class="contentImg">
+      <img src="./assets/pic/pic3.png" alt="image" />
+      <div class="introText">
+        <span class="bold">Fig. 3.</span>
+        <span class="black"> Architecture of our MaskVLA.</span>
+        During the fine-tuning stage, a small portion of the input from the
+        primary camera (e.g., 10%) is masked out. During inference, the model
+        receives complete multi-camera inputs. This masking strategy reduces the
+        model’s dependency on the primary camera and guides more robust and
+        generalized feature learning.
+      </div>
+    </div>
+  </div>
+  <div class="articleMainBodyContainer contentContainer">
+    <div class="contentImg">
+      <img src="./assets/pic/pic4.png" alt="image" />
+      <div class="introText">
+        <span class="bold">Fig. 4.</span>
+        <span class="black"> Simulation experimental task demonstration.</span>
+        We selected 4 tasks from the 50 tasks provided by robotwin and tested
+        both their easy and hard modes respectively. (a) "Adjust bottle" easy
+        mode; (b) "Adjust bottle" hard mode; (c) "Open laptop" easy mode; (d)
+        "Open laptop" hard mode; (e) "Put object cabinet" easy mode; (f) "Put
+        object cabinet" hard mode; (g) "Stack bowls three" easy mode; (h) "Stack
+        bowls three" hard mode.
+      </div>
+    </div>
+  </div>
+  <div class="articleMainBodyContainer contentContainer">
+    <div class="contentImg mediumImg">
+      <img src="./assets/pic/pic5.png" alt="image" />
+      <div class="introText">
+        <span class="bold">Fig. 5.</span>
+        <span class="black"> Failure Analysis.</span>
+        (a) represents grasping at empty space caused by overfit; (b) represents
+        model decision failure caused by OOD, continuously outputting repetitive
+        action chunks with robotic arms repeatedly retreating; (c) represents
+        situations where manipulated objects are knocked away due to internal
+        object collision code in RoboTwin2.0 (as highlighted by the red box in
+        the figure); (d) represents cases where low-quality task completion is
+        judged as failure by the evaluation program; (e) represents situations
+        other than the main cases mentioned above. The two pie charts on the
+        right represent the quantity and proportion of failure cases for
+        baseline and MaskVLA in evaluation respectively.
+      </div>
+    </div>
+  </div>
+  <div class="articleMainBodyContainer contentContainer">
+    <div class="contentImg mediumImg">
+      <img src="./assets/pic/table2.png" alt="image" />
+    </div>
+  </div>
+  <!-- Simulation Videos -->
   <div class="videoDisplayGroupContainer contentContainer">
     <div class="coverVideo">
+      <div class="introText">"Adjust bottle" Easy Mode Success Case</div>
       <video muted playsinline loop controls disable-picture-in-picture="true">
-        <source src="./assets/mp4/video1.mp4" type="video/mp4" />
+        <source
+          src="./assets/mp4/sim_adjust_clean_success_5x.mp4"
+          type="video/mp4"
+        />
       </video>
     </div>
     <div class="coverVideo">
+      <div class="introText">"Adjust bottle" Easy Mode Failure Case</div>
       <video muted playsinline loop controls disable-picture-in-picture="true">
-        <source src="./assets/mp4/video2.mp4" type="video/mp4" />
+        <source
+          src="./assets/mp4/sim_adjust_clean_failed_5x.mp4"
+          type="video/mp4"
+        />
       </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Adjust bottle" Hard Mode Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_adjust_randomized_success_5x.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Adjust bottle" Hard Mode Failure Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_adjust_randomized_failed_5x.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Open laptop" Easy Mode Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_openlaptop_clean_success.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Open laptop" Easy Mode Failure Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_openlaptop_clean_failed.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Open laptop" Hard Mode Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_openlaptop_randomized_success.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Open laptop" Hard Mode Failure Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_openlaptop_randomized_failed.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+
+    <div class="coverVideo">
+      <div class="introText">"Put object cabinet" Easy Mode Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_putobject_clean_success.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Put object cabinet" Easy Mode Failure Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_putobject_clean_failed.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Put object cabinet" Hard Mode Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_putobject_randomized_success.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Put object cabinet" Hard Mode Failure Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_putobject_randomized_failed.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+
+    <div class="coverVideo">
+      <div class="introText">"Stack bowls three" Easy Mode Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_stack_clean_success.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Stack bowls three" Easy Mode Failure Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_stack_clean_failed.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Stack bowls three" Hard Mode Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_stack_randomized_success.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Stack bowls three" Hard Mode Failure Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/sim_stack_randomized_failed.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+  </div>
+
+  <div class="articleMainBodyContainer contentContainer">
+    <div class="contentImg">
+      <img src="./assets/pic/pic6.png" alt="image" />
+      <div class="introText">
+        <span class="bold">Fig. 6. </span>
+        ALOHA robot experimental task demonstration. Four representative tasks
+        test MaskVLA’s multi-view information integration capability: (a) "Feed
+        carrot" - Place the carrot in the food plate; (b) "Adjust cups" -
+        Straighten the cups and place them on the plate; (c) "Place orange" -
+        Place the orange in the fruit dish; (d) "Stack bowls" - Stack the bowls
+        in sequence.
+      </div>
+    </div>
+  </div>
+
+  <!-- Real-world Videos -->
+  <div class="videoDisplayGroupContainer contentContainer realWorldVideo">
+    <div class="coverVideo">
+      <div class="introText">"Feed carrot" Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source src="./assets/mp4/real_carrot_success.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Adjust cups" Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/real_adjust_cup_success.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Place orange" Success Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source src="./assets/mp4/real_orange_success.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Feed carrot" Failed Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source src="./assets/mp4/real_carrot_failed.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Adjust cups" Failed Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/real_adjust_cup_failed.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Place orange" Failed Case</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source src="./assets/mp4/real_orange_failed.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Stack bowls" Success Case with Left Arm</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/real_stack_left_success.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Stack bowls" Success Case with Right Arm</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/real_stack_right_success.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="coverVideo">
+      <div class="introText">"Stack bowls" Failed Case with Right Arm</div>
+      <video muted playsinline loop controls disable-picture-in-picture="true">
+        <source
+          src="./assets/mp4/real_stack_right_failed.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+  </div>
+  <div class="articleMainBodyContainer contentContainer">
+    <div class="contentImg tinyImg">
+      <img src="./assets/pic/pic7.png" alt="image" />
+      <div class="introText">
+        <span class="bold">Fig. 7. </span>
+        Real-world multi-task results.
+      </div>
     </div>
   </div>
 
@@ -229,6 +534,10 @@ a:hover {
   font-family: "Product-sans-bold";
 }
 
+.black {
+  font-family: "Product-sans-black";
+}
+
 .contentContainer {
   display: flex;
   flex-direction: column;
@@ -237,7 +546,7 @@ a:hover {
   width: 100%;
   min-width: 960px;
   height: fit-content;
-  padding: 5vmax 0;
+  padding: 5vmax 0 0;
   background-color: #ffffff;
 }
 /* .contentContainer:nth-child(even) {
@@ -412,12 +721,21 @@ a:hover {
   display: flex;
   width: 100%;
   box-sizing: border-box;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin-top: 1vmax;
+}
+.realWorldVideo.videoDisplayGroupContainer {
+  grid-template-columns: repeat(3, 1fr);
+}
+.realWorldVideo .coverVideo {
+  /* width: 33.3%; */
 }
 .coverVideo video {
   width: 50%;
   aspect-ratio: 16/9;
+  border: #d0d0d0 solid 0.1vmax;
   /* border-radius: 1vmax; */
 }
 
@@ -425,7 +743,7 @@ a:hover {
   display: flex;
   width: 100%;
   box-sizing: border-box;
-  padding: 4vmax 25%;
+  padding: 4vmax 25% 0;
 }
 .contentMainTitle {
   font-family: "Product-sans-black";
@@ -474,14 +792,31 @@ a:hover {
   object-fit: cover;
   margin-bottom: 1.5vmax;
 }
-.contentImg .introText {
+.mediumImg img {
+  width: 75%;
+}
+.tinyImg img {
+  width: 50%;
+}
+.contentImg .introText,
+.coverVideo .introText {
   font-family: "Product-sans-regular";
   font-size: 0.95vmax;
   color: #363636;
   line-height: 1.5;
   text-align: justify;
   padding: 0 7.5%;
-  margin-bottom: 1.5vmax;
+  margin: 0.5vmax 0 1.5vmax;
+}
+
+.realWorldVideo .coverVideo .introText {
+  font-size: 0.7vmax;
+  margin: 0.25vmax 0;
+}
+.coverVideo .introText {
+  font-family: "Product-sans-medium";
+  margin: 2.5vmax 0 0.5vmax;
+  font-size: 1vmax;
 }
 
 .contentImg2 {
