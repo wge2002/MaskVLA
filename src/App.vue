@@ -70,7 +70,7 @@
       controls
       disable-picture-in-picture="true"
     >
-      <source src="./assets/mp4/video1.mp4" type="video/mp4" />
+      <source src="./assets/mp4/real_adjust_cup_success.mp4" type="video/mp4" />
     </video>
   </div>
   <div class="articleMainBodyContainer contentContainer">
