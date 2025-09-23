@@ -62,7 +62,14 @@
     </div>
   </div>
   <div class="videoDisplayContainer contentContainer coverVideo">
-    <video muted playsinline loop controls disable-picture-in-picture="true">
+    <video
+      autoplay
+      muted
+      playsinline
+      loop
+      controls
+      disable-picture-in-picture="true"
+    >
       <source src="./assets/mp4/video1.mp4" type="video/mp4" />
     </video>
   </div>
@@ -190,7 +197,14 @@
   <div class="videoDisplayGroupContainer contentContainer">
     <div class="coverVideo">
       <div class="introText">"Adjust bottle" Easy Mode Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_adjust_clean_success_5x.mp4"
           type="video/mp4"
@@ -199,7 +213,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Adjust bottle" Easy Mode Failure Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_adjust_clean_failed_5x.mp4"
           type="video/mp4"
@@ -208,7 +229,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Adjust bottle" Hard Mode Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_adjust_randomized_success_5x.mp4"
           type="video/mp4"
@@ -217,7 +245,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Adjust bottle" Hard Mode Failure Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_adjust_randomized_failed_5x.mp4"
           type="video/mp4"
@@ -226,7 +261,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Open laptop" Easy Mode Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_openlaptop_clean_success.mp4"
           type="video/mp4"
@@ -235,7 +277,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Open laptop" Easy Mode Failure Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_openlaptop_clean_failed.mp4"
           type="video/mp4"
@@ -244,7 +293,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Open laptop" Hard Mode Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_openlaptop_randomized_success.mp4"
           type="video/mp4"
@@ -253,7 +309,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Open laptop" Hard Mode Failure Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_openlaptop_randomized_failed.mp4"
           type="video/mp4"
@@ -263,7 +326,14 @@
 
     <div class="coverVideo">
       <div class="introText">"Put object cabinet" Easy Mode Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_putobject_clean_success.mp4"
           type="video/mp4"
@@ -272,7 +342,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Put object cabinet" Easy Mode Failure Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_putobject_clean_failed.mp4"
           type="video/mp4"
@@ -281,7 +358,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Put object cabinet" Hard Mode Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_putobject_randomized_success.mp4"
           type="video/mp4"
@@ -290,7 +374,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Put object cabinet" Hard Mode Failure Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_putobject_randomized_failed.mp4"
           type="video/mp4"
@@ -300,7 +391,14 @@
 
     <div class="coverVideo">
       <div class="introText">"Stack bowls three" Easy Mode Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_stack_clean_success.mp4"
           type="video/mp4"
@@ -309,7 +407,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Stack bowls three" Easy Mode Failure Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_stack_clean_failed.mp4"
           type="video/mp4"
@@ -318,7 +423,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Stack bowls three" Hard Mode Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_stack_randomized_success.mp4"
           type="video/mp4"
@@ -327,7 +439,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Stack bowls three" Hard Mode Failure Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/sim_stack_randomized_failed.mp4"
           type="video/mp4"
@@ -355,13 +474,27 @@
   <div class="videoDisplayGroupContainer contentContainer realWorldVideo">
     <div class="coverVideo">
       <div class="introText">"Feed carrot" Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source src="./assets/mp4/real_carrot_success.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="coverVideo">
       <div class="introText">"Adjust cups" Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/real_adjust_cup_success.mp4"
           type="video/mp4"
@@ -370,19 +503,40 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Place orange" Success Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source src="./assets/mp4/real_orange_success.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="coverVideo">
       <div class="introText">"Feed carrot" Failed Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source src="./assets/mp4/real_carrot_failed.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="coverVideo">
       <div class="introText">"Adjust cups" Failed Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/real_adjust_cup_failed.mp4"
           type="video/mp4"
@@ -391,13 +545,27 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Place orange" Failed Case</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source src="./assets/mp4/real_orange_failed.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="coverVideo">
       <div class="introText">"Stack bowls" Success Case with Left Arm</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/real_stack_left_success.mp4"
           type="video/mp4"
@@ -406,7 +574,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Stack bowls" Success Case with Right Arm</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/real_stack_right_success.mp4"
           type="video/mp4"
@@ -415,7 +590,14 @@
     </div>
     <div class="coverVideo">
       <div class="introText">"Stack bowls" Failed Case with Right Arm</div>
-      <video muted playsinline loop controls disable-picture-in-picture="true">
+      <video
+        autoplay
+        muted
+        playsinline
+        loop
+        controls
+        disable-picture-in-picture="true"
+      >
         <source
           src="./assets/mp4/real_stack_right_failed.mp4"
           type="video/mp4"
@@ -463,10 +645,10 @@ body {
   /* word setting */
   font-family: "Alibaba-puhui-regular";
 }
-* {
-  /* word-break: normal;
-  word-wrap: break-word; */
-}
+/* * {
+  word-break: normal;
+  word-wrap: break-word;
+} */
 /* font */
 @font-face {
   font-family: "Product-sans-black";
