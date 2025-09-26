@@ -70,7 +70,7 @@
       controls
       disable-picture-in-picture="true"
     >
-      <source src="./assets/mp4/real_adjust_cup_success.mp4" type="video/mp4" />
+      <source src="./assets/mp4/intro.mp4" type="video/mp4" />
     </video>
   </div>
   <div class="articleMainBodyContainer contentContainer">
@@ -731,6 +731,9 @@ a:hover {
   padding: 5vmax 0 0;
   background-color: #ffffff;
 }
+.contentContainer:last-child {
+  padding-bottom: 15vmax;
+}
 /* .contentContainer:nth-child(even) {
   background-color: #f0f0f0;
 }
@@ -912,7 +915,7 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
 }
 .realWorldVideo .coverVideo {
-  /* width: 33.3%; */
+  margin-top: 2vmax;
 }
 .coverVideo video {
   width: 50%;
