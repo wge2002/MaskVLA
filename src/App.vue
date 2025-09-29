@@ -188,8 +188,8 @@
   <!-- Simulation Videos -->
   <div class="videoDisplayGroupContainer contentContainer simVideo">
     <div class="occupied"></div>
-    <div class="resultType">Success Case</div>
-    <div class="resultType">Failure Case</div>
+    <div class="resultType">Ours✅️</div>
+    <div class="resultType">Baseline❌</div>
     <div class="occupied"></div>
     <div class="difficultyType">Easy</div>
     <div class="difficultyType">Hard</div>
