@@ -499,7 +499,7 @@
   <!-- Real-world Videos -->
   <div class="videoDisplayGroupContainer contentContainer realWorldVideo">
     <div class="coverVideo">
-      <div class="introText">Feed carrot</div>
+      <div class="introText">Feed Carrot</div>
       <video
         autoplay
         muted
@@ -512,7 +512,7 @@
       </video>
     </div>
     <div class="coverVideo">
-      <div class="introText">Adjust cups</div>
+      <div class="introText">Adjust Cups</div>
       <video
         autoplay
         muted
@@ -528,7 +528,7 @@
       </video>
     </div>
     <div class="coverVideo">
-      <div class="introText">Place orange</div>
+      <div class="introText">Place Orange</div>
       <video
         autoplay
         muted
@@ -542,7 +542,7 @@
     </div>
 
     <div class="coverVideo">
-      <div class="introText">Stack bowls</div>
+      <div class="introText">Stack Bowls</div>
       <video
         autoplay
         muted
@@ -552,7 +552,7 @@
         disable-picture-in-picture="true"
       >
         <source
-          src="./assets/mp4/real_stack_left_success.mp4"
+          src="./assets/mp4/real_stack_right_success.mp4"
           type="video/mp4"
         />
       </video>
