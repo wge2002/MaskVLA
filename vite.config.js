@@ -6,7 +6,7 @@ import viteCompression from "vite-plugin-compression";
 import minipic from "vite-plugin-minipic";
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/w/MaskVLA-2F70/",
+  base: "/MaskVLA-2F70/",
   plugins: [
     vue(),
     viteCompression({
