@@ -1,17 +1,311 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/MaskVLA/css/reset.css">
-    <title>
-      MaskVLA: Visual Masking Against Trajectory Overfitting of
-      Vision-Language-Action Model
-    </title>
-    <script type="module" crossorigin="" src="/MaskVLA/static/js/index-39Z82tMq.js"></script>
-    <link rel="modulepreload" crossorigin="" href="/MaskVLA/static/js/@vue-C14pjSWt.js">
-    <link rel="stylesheet" crossorigin="" href="/MaskVLA/static/css/index-DC-9p3Pg.css">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MaskVLA: Visual Masking Against Trajectory Overfitting of Vision-Language-Action Models. IROS 2026 accepted project page."
+    />
+    <title>MaskVLA | IROS 2026</title>
+    <link rel="stylesheet" href="/MaskVLA/css/reset.css" />
+    <link rel="stylesheet" href="/MaskVLA/static/css/site.css" />
   </head>
   <body>
-    <div id="app"></div>
-  
+    <header class="site-header">
+      <a class="brand" href="#top">MaskVLA</a>
+      <nav aria-label="Page navigation">
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#videos">Videos</a>
+        <a href="/MaskVLA/static/pdf/iros.pdf">Paper</a>
+      </nav>
+    </header>
 
-</body></html>
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="eyebrow">IROS 2026 Accepted</div>
+        <h1>MaskVLA: Visual Masking Against Trajectory Overfitting of Vision-Language-Action Model</h1>
+
+        <div class="authors">
+          <span>Yuxuan Jiang<sup>1,*</sup></span>
+          <span>Jiaying Huang<sup>1,2,*</sup></span>
+          <span>Ge Wang<sup>1,2,3,*</sup></span>
+          <span>Shenhao Yan<sup>1,3</sup></span>
+          <span>Jiahao Yang<sup>1,3,4</sup></span>
+          <span>Chengsi Yao<sup>1,3,5</sup></span>
+          <span>Qi Liu<sup>1,3</sup></span>
+          <span>Qing Zhao<sup>1,3</sup></span>
+          <span>Shuguang Cui<sup>1,2</sup></span>
+          <span>Yiming Zhao<sup>3</sup></span>
+          <span>Yatong Han<sup>3,&dagger;</sup></span>
+          <span>Zhen Li<sup>1,2,&dagger;</sup></span>
+        </div>
+
+        <p class="author-note"><sup>*</sup> Equal contribution. <sup>&dagger;</sup> Corresponding authors.</p>
+
+        <div class="affiliations">
+          <span><sup>1</sup>FNii, Shenzhen</span>
+          <span><sup>2</sup>CUHK-Shenzhen</span>
+          <span><sup>3</sup>Ising AI</span>
+          <span><sup>4</sup>University of Glasgow</span>
+          <span><sup>5</sup>Southeast University</span>
+        </div>
+
+        <div class="action-row">
+          <a class="button primary" href="/MaskVLA/static/pdf/iros.pdf">
+            <img src="/MaskVLA/static/png/arxiv-V_erScmt.png" alt="" />
+            Paper
+          </a>
+          <a class="button" href="https://github.com/wge2002/MaskVLA">
+            <img src="/MaskVLA/static/png/github-CkvPrOKa.png" alt="" />
+            Code
+          </a>
+        </div>
+
+        <div class="hero-video">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source src="/MaskVLA/static/mp4/intro-BMZcMmW1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      <section class="section-shell summary-grid" aria-label="Summary">
+        <article class="metric">
+          <strong>79.8%</strong>
+          <span>average success on RoboTwin2.0 across easy and hard settings</span>
+        </article>
+        <article class="metric">
+          <strong>+20.0</strong>
+          <span>absolute hard-mode gain over OpenVLA-OFT</span>
+        </article>
+        <article class="metric">
+          <strong>85.0%</strong>
+          <span>real-world success on Feed carrot and Place orange</span>
+        </article>
+      </section>
+
+      <section id="abstract" class="section-shell two-column">
+        <div>
+          <p class="section-kicker">Abstract</p>
+          <h2>Reducing trajectory overfitting with view-balanced training.</h2>
+        </div>
+        <div class="prose">
+          <p>
+            Vision-Language-Action (VLA) models integrate vision-language understanding with executable robot
+            actions, enabling end-to-end learning for robot control. However, when fine-tuned on limited
+            manipulation datasets, existing models can overfit to demonstration trajectories and rely too heavily on
+            the primary camera view.
+          </p>
+          <p>
+            MaskVLA introduces a simple masking-based fine-tuning strategy: randomly mask a small portion of the
+            primary camera input during training so the policy learns to use wrist-camera information more
+            effectively. On RoboTwin2.0, MaskVLA improves average success by 23.2% over &pi;<sub>0</sub> and
+            16.8% over OpenVLA-OFT, with additional gains on real-world ALOHA tasks.
+          </p>
+        </div>
+      </section>
+
+      <section id="method" class="section-shell">
+        <div class="section-heading">
+          <p class="section-kicker">Method</p>
+          <h2>Random masking on the primary camera view.</h2>
+          <p>
+            The primary view gives global scene context, while wrist cameras provide close-range evidence during
+            occlusion and contact. MaskVLA explicitly discourages primary-view shortcuts during fine-tuning.
+          </p>
+        </div>
+
+        <figure class="media-figure wide">
+          <img src="/MaskVLA/static/png/pic3--FDA16NS.png" alt="MaskVLA architecture diagram" />
+          <figcaption>
+            During training, a small portion of the primary camera input is masked. During inference, the policy
+            receives full multi-camera observations.
+          </figcaption>
+        </figure>
+
+        <div class="feature-grid">
+          <article>
+            <span>01</span>
+            <h3>Diagnose overfitting</h3>
+            <p>Grad-CAM analysis shows baseline attention drifting toward local texture cues and primary-view bias.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Mask the shortcut</h3>
+            <p>Primary-camera masking forces the policy to learn from all available visual streams.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Recover robustness</h3>
+            <p>At inference time the mask is disabled, letting the model use full multi-view observations.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="results" class="section-shell">
+        <div class="section-heading">
+          <p class="section-kicker">Results</p>
+          <h2>Consistent gains in simulation and on ALOHA robots.</h2>
+        </div>
+
+        <div class="results-layout">
+          <figure class="media-figure">
+            <img src="/MaskVLA/static/png/pic1-C4px2jGP.png" alt="MaskVLA overview and results summary" />
+            <figcaption>Overview of the MaskVLA training strategy and evaluation settings.</figcaption>
+          </figure>
+          <div class="result-copy">
+            <h3>RoboTwin2.0 benchmark</h3>
+            <p>
+              MaskVLA achieves the best average performance across four bimanual manipulation tasks. In hard mode,
+              it reaches 75.0% average success, a 20.0-point gain over OpenVLA-OFT.
+            </p>
+            <ul class="check-list">
+              <li>Best performance on 6 of 8 simulation subtasks.</li>
+              <li>Large gains on position-generalization tasks such as Stack bowls three.</li>
+              <li>MaskVLA-main-10% is the strongest ablation setting, averaging 74.0% in hard mode.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="results-layout reverse">
+          <figure class="media-figure">
+            <img src="/MaskVLA/static/png/pic7-WL4N_chl.png" alt="Real-world task success rates" />
+            <figcaption>Real-world ALOHA evaluation across Feed carrot, Place orange, Adjust cups, and Stack bowls.</figcaption>
+          </figure>
+          <div class="result-copy">
+            <h3>Real-world ALOHA evaluation</h3>
+            <p>
+              On the Airbot Mobile ALOHA platform, MaskVLA improves over OpenVLA-OFT across all four real-world
+              tasks, including 85.0% success on Feed carrot and Place orange and 70.0% on Adjust cups.
+            </p>
+            <figure class="media-figure compact">
+              <img src="/MaskVLA/static/png/pic6-B9xP2chj.png" alt="ALOHA real-world task setup" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="videos" class="section-shell">
+        <div class="section-heading">
+          <p class="section-kicker">Videos</p>
+          <h2>Qualitative rollouts.</h2>
+          <p>Simulation comparisons use randomized hard settings. Real-world videos show successful ALOHA rollouts.</p>
+        </div>
+
+        <h3 class="subheading">Simulation: MaskVLA success vs. baseline failure</h3>
+        <div class="video-grid compare-grid">
+          <article class="video-card">
+            <h4>Adjust Bottle</h4>
+            <div class="video-pair">
+              <div>
+                <span>MaskVLA</span>
+                <video muted loop playsinline controls preload="metadata">
+                  <source src="/MaskVLA/static/mp4/sim_adjust_randomized_success_5x-CU0HIO59.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div>
+                <span>Baseline</span>
+                <video muted loop playsinline controls preload="metadata">
+                  <source src="/MaskVLA/static/mp4/sim_adjust_randomized_failed_5x-Bns9NPkN.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <h4>Open Laptop</h4>
+            <div class="video-pair">
+              <div>
+                <span>MaskVLA</span>
+                <video muted loop playsinline controls preload="metadata">
+                  <source src="/MaskVLA/static/mp4/sim_openlaptop_randomized_success-BfvLuITc.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div>
+                <span>Baseline</span>
+                <video muted loop playsinline controls preload="metadata">
+                  <source src="/MaskVLA/static/mp4/sim_openlaptop_randomized_failed-tNkjwFoL.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <h4>Put Object Cabinet</h4>
+            <div class="video-pair">
+              <div>
+                <span>MaskVLA</span>
+                <video muted loop playsinline controls preload="metadata">
+                  <source src="/MaskVLA/static/mp4/sim_putobject_randomized_success-C5_9vZga.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div>
+                <span>Baseline</span>
+                <video muted loop playsinline controls preload="metadata">
+                  <source src="/MaskVLA/static/mp4/sim_putobject_randomized_failed-Ck07yy9D.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <h4>Stack Bowls Three</h4>
+            <div class="video-pair">
+              <div>
+                <span>MaskVLA</span>
+                <video muted loop playsinline controls preload="metadata">
+                  <source src="/MaskVLA/static/mp4/sim_stack_randomized_success-CqWJ29CK.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div>
+                <span>Baseline</span>
+                <video muted loop playsinline controls preload="metadata">
+                  <source src="/MaskVLA/static/mp4/sim_stack_randomized_failed-q73Bw5Z0.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="subheading">Real-world ALOHA rollouts</h3>
+        <div class="video-grid real-grid">
+          <article class="video-card">
+            <h4>Feed Carrot</h4>
+            <video muted loop playsinline controls preload="metadata">
+              <source src="/MaskVLA/static/mp4/real_carrot_success-D6m1q-k1.mp4" type="video/mp4" />
+            </video>
+          </article>
+          <article class="video-card">
+            <h4>Adjust Cups</h4>
+            <video muted loop playsinline controls preload="metadata">
+              <source src="/MaskVLA/static/mp4/real_adjust_cup_success-CyAE2Zpq.mp4" type="video/mp4" />
+            </video>
+          </article>
+          <article class="video-card">
+            <h4>Place Orange</h4>
+            <video muted loop playsinline controls preload="metadata">
+              <source src="/MaskVLA/static/mp4/real_orange_success-Byf0orn_.mp4" type="video/mp4" />
+            </video>
+          </article>
+          <article class="video-card">
+            <h4>Stack Bowls</h4>
+            <video muted loop playsinline controls preload="metadata">
+              <source src="/MaskVLA/static/mp4/real_stack_right_success-CunIJI_9.mp4" type="video/mp4" />
+            </video>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell citation">
+        <p class="section-kicker">Citation</p>
+        <pre><code>@inproceedings{jiang2026maskvla,
+  title  = {MaskVLA: Visual Masking Against Trajectory Overfitting of Vision-Language-Action Model},
+  author = {Jiang, Yuxuan and Huang, Jiaying and Wang, Ge and Yan, Shenhao and Yang, Jiahao and Yao, Chengsi and Liu, Qi and Zhao, Qing and Cui, Shuguang and Zhao, Yiming and Han, Yatong and Li, Zhen},
+  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year = {2026}
+}</code></pre>
+      </section>
+    </main>
+  </body>
+</html>
